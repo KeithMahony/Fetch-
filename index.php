@@ -15,7 +15,7 @@
 <div class="jumbotron text-center">
   <h1>Fetch! Application</h1>
   <p>Bootstrap example. Come back soon!</p> 
-  <center>![Screenshot](FETCH!.png)</center>
+  <center>![Screenshot](https://raw.githubusercontent.com/X17138744/Fetch-/master/FETCH!.png)</center>
 </div>
 </body>
 </html>
