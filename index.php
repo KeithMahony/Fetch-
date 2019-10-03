@@ -10,7 +10,6 @@ width:700px;height:225px;margin:10px;border-width:6px;border-color:#000000;borde
 
 <br>
 
-We are currently building!
 
 <br>
 
