@@ -1,6 +1,6 @@
 <?php
 	
-
+ echo 'FetchApp Test';
 
 // Create connection
 $con=mysqli_connect("localhost","username","password","dbname");
