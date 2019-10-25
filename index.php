@@ -3,7 +3,7 @@
  echo 'FetchApp Test';
 
 // Create connection
-$con=mysqli_connect("localhost","username","password","dbname");
+$con=mysqli_connect("us-cdbr-iron-east-05.cleardb.net","bfee5eec5d1d2a","49334008","heroku_030aad63729d0bd");
  
 // Check connection
 if (mysqli_connect_errno())
