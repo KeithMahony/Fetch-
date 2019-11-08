@@ -15,4 +15,26 @@ else{
 }
 // Close connection
 mysqli_close($con);
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        //Request Data comes in JSON format from the android app
+        $json_request = json_decode(file_get_contents("php://input"));
+        $json_result = array();
+
+        //Get name from $json_request variable
+        $name = $json_request->{"name"};
+
+        //Your method
+        sayHi($name);
+
+    }
+
+    function sayHi($name){
+
+        echo "Hello " . $name;
+
+    }
+
 ?>
