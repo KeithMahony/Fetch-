@@ -9,7 +9,6 @@ include 'DatabaseConfig.php';
  
  $Password = $_POST['User_Password'];
  
- $Full_Name = $_POST['User_Full_Name'];
 
  $CheckSQL = "SELECT * FROM User_Details_Table WHERE User_Email='$Email'";
  
@@ -21,7 +20,7 @@ include 'DatabaseConfig.php';
 
  }
 else{ 
-$Sql_Query = "INSERT INTO User_Details_Table (User_Email,User_Password,User_Full_Name) values ('$Email','$Password','$Full_Name')";
+$Sql_Query = "INSERT INTO User_Details_Table (User_Email,User_Password) values ('$Email','$Password')";
 
  if(mysqli_query($con,$Sql_Query))
 {
