@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
  }
 else{ 
-$Sql_Query = "INSERT INTO users (User_Email,User_Password,User_Full_Name) values ('$email','$password','$fName')";
+$Sql_Query = "INSERT INTO users (email,password,fName) values ('$User_Email','$User_Password','$User_Full_Name')";
 
  if(mysqli_query($con,$Sql_Query))
 {
