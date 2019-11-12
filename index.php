@@ -1,40 +1,37 @@
-<?php
-	
- echo 'FetchApp Test';
+ <?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
 
-// Createa a connection
-$con=mysqli_connect("us-cdbr-iron-east-05.cleardb.net","bfee5eec5d1d2a","49334008","heroku_030aad63729d0bd");
+include 'DatabaseConfig.php';
+
+ $con = mysqli_connect("us-cdbr-iron-east-05.cleardb.net","bfee5eec5d1d2a","49334008","heroku_030aad63729d0bd");
+
+ $email = $_POST['User_Email'];
  
-// Checks connection
-if (mysqli_connect_errno())
+ $password = $_POST['User_Password'];
+ 
+ $fName = $_POST['User_Full_Name'];
+
+ $CheckSQL = "SELECT * FROM users WHERE User_Email='$email'";
+ 
+ $check = mysqli_fetch_array(mysqli_query($con,$CheckSQL));
+ 
+ if(isset($check)){
+
+ echo 'Email Already Exist, Please Enter Another Email.';
+
+ }
+else{ 
+$Sql_Query = "INSERT INTO users (User_Email,User_Password,User_Full_Name) values ('$email','$password','$fName')";
+
+ if(mysqli_query($con,$Sql_Query))
 {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ echo 'User Registration Successfully';
 }
-else{
-  echo "Connected to MySQL";
+else
+{
+ echo 'Something went wrong';
+ }
+ }
 }
-// Close connection
-mysqli_close($con);
-
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-        //Request Data comes in JSON format from the android app
-        $json_request = json_decode(file_get_contents("php://input"));
-        $json_result = array();
-
-        //Get name from $json_request variable
-        $name = $json_request->{"name"};
-
-        //Your method
-        sayHi($name);
-
-    }
-
-    function sayHi($name){
-
-        echo "Hello " . $name;
-
-    }
-
+ mysqli_close($con);
 ?>
