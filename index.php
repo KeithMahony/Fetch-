@@ -3,7 +3,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 include 'DatabaseConfig.php';
 
- $con = mysqli_connect("us-cdbr-iron-east-05.cleardb.net","bfee5eec5d1d2a","49334008","heroku_030aad63729d0bd");
+ $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
 
  $Email = $_POST['email'];
  
