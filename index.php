@@ -5,13 +5,13 @@ include 'DatabaseConfig.php';
 
  $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
 
- $Email = $_POST['email'];
+ $email = $_POST['email'];
  
- $Password = $_POST['password'];
+ $password = $_POST['password'];
  
- $FullName = $_POST['fName'];
+ $fName = $_POST['fName'];
 
- $CheckSQL = "SELECT * FROM users WHERE email='$Email'";
+ $CheckSQL = "SELECT * FROM users WHERE email='$email'";
  
  $check = mysqli_fetch_array(mysqli_query($con,$CheckSQL));
  
