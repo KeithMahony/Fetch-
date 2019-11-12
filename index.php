@@ -1,17 +1,17 @@
  <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
- 
- include 'DatabaseConfig.php';
- 
- $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
 
- $User_Email = $_POST['email'];
- 
- $User_Password = $_POST['password'];
- 
- $User_Full_Name = $_POST['fName'];
+include 'DatabaseConfig.php';
 
- $CheckSQL = "SELECT * FROM users WHERE $User_Email ='email'";
+ $con = mysqli_connect("us-cdbr-iron-east-05.cleardb.net","bfee5eec5d1d2a","49334008","heroku_030aad63729d0bd");
+
+ $email = $_POST['User_Email'];
+ 
+ $password = $_POST['User_Password'];
+ 
+ $fName = $_POST['User_Full_Name'];
+
+ $CheckSQL = "SELECT * FROM users WHERE User_Email='$email'";
  
  $check = mysqli_fetch_array(mysqli_query($con,$CheckSQL));
  
@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
  }
 else{ 
-$Sql_Query = "INSERT INTO users ('email','password','fName') values ('$User_Email','$User_Password','$User_Full_Name')";
+$Sql_Query = "INSERT INTO users (User_Email,User_Password,User_Full_Name) values ('$email','$password','$fName')";
 
  if(mysqli_query($con,$Sql_Query))
 {
