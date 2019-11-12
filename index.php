@@ -5,13 +5,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
  
  $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
 
- $User_Email = $_POST['email'];
+ email = $_POST['$User_Email'];
  
- $User_Password = $_POST['password'];
+ password = $_POST['$User_Password'];
  
- $User_Full_Name = $_POST['fName'];
+ fName = $_POST['$User_Full_Name'];
 
- $CheckSQL = "SELECT * FROM users WHERE $User_Email ='email'";
+ $CheckSQL = "SELECT * FROM users WHERE email ='$User_Email'";
  
  $check = mysqli_fetch_array(mysqli_query($con,$CheckSQL));
  
@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
  }
 else{ 
-$Sql_Query = "INSERT INTO users (email,password,fName) values ('$User_Email','$User_Password','$User_Full_Name')";
+$Sql_Query = "INSERT INTO users ($User_Email','$User_Password','$User_Full_Name) values ('email, password, fName')";
 
  if(mysqli_query($con,$Sql_Query))
 {
