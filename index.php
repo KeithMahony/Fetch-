@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
  
  $User_Full_Name = $_POST['fName'];
 
- $CheckSQL = "SELECT * FROM users WHERE email='$User_Email'";
+ $CheckSQL = "SELECT * FROM users WHERE $User_Email ='email'";
  
  $check = mysqli_fetch_array(mysqli_query($con,$CheckSQL));
  
