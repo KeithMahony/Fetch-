@@ -5,13 +5,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
  
  $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
 
- $email = $_POST['User_Email'];
+ $User_Email = $_POST['email'];
  
- $password = $_POST['User_Password'];
+ $User_Password = $_POST['password'];
  
- $fName = $_POST['User_Full_Name'];
+ $User_Full_Name = $_POST['fName'];
 
- $CheckSQL = "SELECT * FROM users WHERE User_Email='$email'";
+ $CheckSQL = "SELECT * FROM users WHERE email='$User_Email'";
  
  $check = mysqli_fetch_array(mysqli_query($con,$CheckSQL));
  
