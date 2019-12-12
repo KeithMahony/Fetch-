@@ -1,4 +1,5 @@
  <?php
+header("Location: Bootstrap/index.html");
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
 include 'DatabaseConfig.php';
